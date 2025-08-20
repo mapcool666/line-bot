@@ -62,14 +62,14 @@ def get_drive_time(origin, destination_coords, display_name):
     response = requests.get(url, params=params).json()
 
     if not response.get("routes"):
-        return f"{display_name}\n1651黑 🈲代駕\n查詢失敗：找不到路線", None
+        return f"{display_name}\n6661淺藍 🈲代駕\n查詢失敗：找不到路線", None
 
     try:
         seconds = response["routes"][0]["legs"][0]["duration_in_traffic"]["value"]
         minutes = int(seconds / 60) + 2
-        return f"{display_name}\n1651黑 🈲代駕\n{minutes}分", destination_coords
+        return f"{display_name}\n6661淺藍 🈲代駕\n{minutes}分", destination_coords
     except Exception as e:
-        return f"{display_name}\n1651黑 🈲代駕\n查詢失敗：{str(e)}", None
+        return f"{display_name}\n6661淺藍 🈲代駕\n查詢失敗：{str(e)}", None
 
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
